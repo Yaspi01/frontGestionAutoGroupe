@@ -1,0 +1,30 @@
+ion-card{
+  background-color: #8A8784;
+  color: #000000;
+  border-radius: 25px;
+  padding: 25px;
+}
+button{
+  text-align: center;
+  background-color: #FF8000;
+  color: #000000;
+  display: flex;
+  height: 100%;
+  border-radius: 25px;
+}
+ion-input{
+  background-color: white;
+  border-radius: 15px;
+}
+ion-img{
+  height: 80px;
+}
+.ion-card{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.span{
+  align-items: center;
+}
