@@ -8,5 +8,16 @@
 </ion-header>
 
 <ion-content>
-
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Numéro</th>
+        </tr>
+        <tr *ngFor="let app of apprenants">
+            <td>{{app.nom}}</td>
+            <td>{{app.email}}</td>
+            <td>{{app.tel}}</td>
+        </tr>
+    </table>
 </ion-content>
