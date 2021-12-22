@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Traveaux</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="main-menu"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-label>Gestion des traveaux</ion-label>
+    <ion-row class="row">
+        <ion-col>
+            <button class="ajouterLister" style="background-color: #FF8000;" (click)="clickLister()">Lister</button>
+        </ion-col>
+        <ion-col>
+            <button class="ajouterLister" (click)="clickAjouter()">Ajouter</button>
+        </ion-col>
+    </ion-row>
+    <div *ngIf='mode===1'>
+        <table>
+            <thead>
+                <tr>
+                    <th><b>Thème</b></th>
+                    <th><b>Début</b></th>
+                    <th><b>Fin</b></th>
+                    <th><b>Action</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let app of travaux">
+                    <td>{{app.titre}}</td>
+                    <td>{{app.debut}}</td>
+                    <td>{{app.fin}}</td>
+                    <td>
+                        <ion-icon name="trash"></ion-icon>
+                        <ion-icon name="create-outline"></ion-icon>
+                    </td>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf='mode===2'>
+        <form action="">
+            <ion-label>Thème</ion-label>
+            <ion-input class="theme" name="titre"></ion-input>
+            <ion-label>Type</ion-label><br><br>
+            <ion-radio-group>
+                <ion-radio value="veille" name="type"></ion-radio>
+                <ion-label>Veille</ion-label>
+                <ion-radio value="tp" name="type"></ion-radio>
+                <ion-label>TP</ion-label>
+            </ion-radio-group><br><br>
+            <ion-label>Nombre de personne par groupe</ion-label>
+            <ion-input class="nbreApprenants"></ion-input><br>
+            <ion-label>Mode de génération des groupes</ion-label><br><br>
+            <ion-radio-group>
+                <ion-radio value="ordre"></ion-radio>
+                <ion-label>Ordre</ion-label>
+                <ion-radio value="aleatoir">Aleatoire</ion-radio>
+                <ion-label>Aleatoire</ion-label>
+            </ion-radio-group><br><br>
+            <button class="ajouterButton" style="background-color: #FF8000; color: #000000" routerLink="/menu">Confirmer</button>
+        </form>
+    </div>
+</ion-content>

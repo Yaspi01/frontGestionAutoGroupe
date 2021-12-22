@@ -10,13 +10,9 @@ ion-card {
     justify-content: center;
     align-items: center;
     align-content: stretch;
-}
-
-.card-content {
-    justify-content: center;
-}
-
-.content {
+  }
+  
+  .content{
     border-radius: 10px;
     width: 80px;
     height: 80px;
@@ -32,9 +28,16 @@ ion-card {
 
 .details {
     align-items: center;
-}
+    position: relative;
+    left: 10px;
+  }
 
-#container {
+  ion-icon{
+    position: relative;
+    left: 10px;
+    font-size: 17px;
+  }
+  #container {
     text-align: center;
     position: absolute;
     left: 0;
