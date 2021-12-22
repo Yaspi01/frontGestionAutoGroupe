@@ -6,9 +6,7 @@
     align-items: center;
     align-content: stretch;
   }
-  .card-content{
-    justify-content: center;
-  }
+  
   .content{
     border-radius: 10px;
     width: 80px;
@@ -23,6 +21,14 @@
   }
   .details{
     align-items: center;
+    position: relative;
+    left: 10px;
+  }
+
+  ion-icon{
+    position: relative;
+    left: 10px;
+    font-size: 17px;
   }
   #container {
     text-align: center;
