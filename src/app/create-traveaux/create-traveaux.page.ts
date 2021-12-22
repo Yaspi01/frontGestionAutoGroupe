@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-traveaux.page.scss'],
 })
 export class CreateTraveauxPage implements OnInit {
-  valueSelected: string = "veille";
+  valueSelected = 'veille';
   constructor() { }
 
   ngOnInit() {

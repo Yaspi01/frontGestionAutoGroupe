@@ -1,17 +1,23 @@
-table{
-    border-collapse: collapse;
-    color: black;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-th, td{
-    border: 1px solid black;
-    text-align: center;
+* {
     width: auto;
     height: auto;
 }
 
-// tr:nth-child(even){
-//     background-color: #FF8000;
-// }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    color: black;
+}
+
+th,
+td {
+    border: 1px solid #0e0d0d;
+    text-align: center;
+    padding: 1px;
+    width: auto;
+    height: auto;
+}
+
+tr:nth-child(even) {
+    background-color: #FF8000;
+}
