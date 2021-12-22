@@ -30,9 +30,18 @@ const routes: Routes = [
   {
     path: 'liste',
     loadChildren: () => import('./liste/liste.module').then( m => m.ListePageModule)
-  },  {
+  },
+  {
     path: 'forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'create-traveaux',
+    loadChildren: () => import('./create-traveaux/create-traveaux.module').then( m => m.CreateTraveauxPageModule)
+  },
+  {
+    path: 'list-traveaux',
+    loadChildren: () => import('./list-traveaux/list-traveaux.module').then( m => m.ListTraveauxPageModule)
   },
 
 
