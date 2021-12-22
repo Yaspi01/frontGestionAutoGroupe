@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponent } from '../popover/popover.component';
+
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
 
-  constructor() { }
+  constructor(public popoverController: PopoverController) { }
+  async presentPopover(eve) {
+    const popover = await this.popoverController.create({
+      component: PopoverComponent,
+      componentProps​:{
+
+      },
+      event:eve,
+      //mode:'ios',
+      cssClass:'popOver',
+      translucent: true
+    });
+    popover.onWillDismiss().then(()=>{
+      //alert('Veuillez annuler');
+    });
+    await popover.present();
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
 
   ngOnInit() {
   }

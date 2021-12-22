@@ -8,53 +8,32 @@
 </ion-header>
 
 <ion-content>
+    <!-- <ion-card>
+        <ion-row>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-label>groupe X</ion-label>
+                </ion-item>
+
+
+                <ion-card-content>
+                    <summary>
+                        <button (click)="presentPopover($event)">text</button>
+                        <details>azertyuiop^$</details>
+                    </summary>
+                </ion-card-content>
+            </ion-col>
+        </ion-row>
+
+    </ion-card> -->
     <div class="card-disposition">
-        <div class="card-content">
+        <div class="card-content" (click)="presentPopover($event)">
             <ion-card class="content">
-                <ion-label>Groupe 2</ion-label>
+                <ion-label>Groupe X</ion-label>
                 <div class="hr"></div>
-                <ion-label class="details">Details</ion-label>
-                <ion-icon name="caret-down-outline"></ion-icon>
-            </ion-card>
-        </div>
-        <div class="card-content">
-            <ion-card class="content">
-                <ion-label>Groupe 2</ion-label>
-                <div class="hr"></div>
-                <ion-label class="details">Details</ion-label>
-                <ion-icon name="caret-down-outline"></ion-icon>
-            </ion-card>
-        </div>
-        <div class="card-content">
-            <ion-card class="content">
-                <ion-label>Groupe 2</ion-label>
-                <div class="hr"></div>
-                <ion-label class="details">Details</ion-label>
-                <ion-icon name="caret-down-outline"></ion-icon>
-            </ion-card>
-        </div>
-        <div class="card-content">
-            <ion-card class="content">
-                <ion-label>Groupe 2</ion-label>
-                <div class="hr"></div>
-                <ion-label class="details">Details</ion-label>
-                <ion-icon name="caret-down-outline"></ion-icon>
-            </ion-card>
-        </div>
-        <div class="card-content">
-            <ion-card class="content">
-                <ion-label>Groupe 2</ion-label>
-                <div class="hr"></div>
-                <ion-label class="details">Details</ion-label>
-                <ion-icon name="caret-down-outline"></ion-icon>
-            </ion-card>
-        </div>
-        <div class="card-content">
-            <ion-card class="content">
-                <ion-label>Groupe 2</ion-label>
-                <div class="hr"></div>
-                <ion-label class="details">Details</ion-label>
-                <ion-icon name="caret-down-outline"></ion-icon>
+                <summary>
+                    <details></details>
+                </summary>
             </ion-card>
         </div>
     </div>
