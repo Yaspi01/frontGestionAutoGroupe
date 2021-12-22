@@ -20,7 +20,7 @@ export class MenuPage implements OnInit {
       event:eve,
       //mode:'ios',
       cssClass:'popOver',
-      translucent: false
+      translucent: true
     });
     popover.onWillDismiss().then(()=>{
       //alert('Veuillez annuler');
