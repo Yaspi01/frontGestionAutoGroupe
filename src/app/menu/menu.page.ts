@@ -18,7 +18,12 @@ export class MenuPage implements OnInit {
 
       },
       event:eve,
-      translucent: true
+      //mode:'ios',
+      cssClass:'popOver',
+      translucent: false
+    });
+    popover.onWillDismiss().then(()=>{
+      //alert('Veuillez annuler');
     });
     await popover.present();
     const { role } = await popover.onDidDismiss();
