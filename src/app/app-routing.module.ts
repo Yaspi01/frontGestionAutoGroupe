@@ -34,6 +34,14 @@ const routes: Routes = [
     path: 'forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
+  {
+    path: 'ajouter',
+    loadChildren: () => import('./ajouter/ajouter.module').then( m => m.AjouterPageModule)
+  },
+  {
+    path: 'lister',
+    loadChildren: () => import('./lister/lister.module').then( m => m.ListerPageModule)
+  },
 
 
 ];
