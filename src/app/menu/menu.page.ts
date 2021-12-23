@@ -1,3 +1,4 @@
+import { ServiceService } from './../services/service.service';
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
@@ -10,7 +11,12 @@ import { PopoverComponent } from '../popover/popover.component';
 })
 export class MenuPage implements OnInit {
 
-  constructor(public popoverController: PopoverController) { }
+  groupes: any;
+  constructor(public popoverController: PopoverController, public services: ServiceService)
+   {
+    this.listeGroupes();
+
+   }
   async presentPopover(eve) {
     const popover = await this.popoverController.create({
       component: PopoverComponent,
@@ -18,19 +24,27 @@ export class MenuPage implements OnInit {
 
       },
       event:eve,
-      //mode:'ios',
+      //mode:'ios'| 'md',
       cssClass:'popOver',
       translucent: true
     });
     popover.onWillDismiss().then(()=>{
-      //alert('Veuillez annuler');
     });
     await popover.present();
     const { role } = await popover.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    //console.log('onDidDismiss resolved with role', role);
   }
 
+
   ngOnInit() {
+  }
+
+  listeGroupes(){
+    this.services.listGroupe().subscribe((data: any)=>{
+      this.groupes=data;
+      console.log(data);
+
+    });
   }
 
 }

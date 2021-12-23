@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>liste</ion-title>
+        <ion-title>Apprenants</ion-title>
         <ion-buttons slot="start">
             <ion-menu-button menu="main-menu"></ion-menu-button>
         </ion-buttons>
@@ -14,7 +14,7 @@
             <th>Email</th>
             <th>Numéro</th>
         </tr>
-        <tr *ngFor="let app of apprenants">
+        <tr *ngFor="let app of listes">
             <td>{{app.nom}}</td>
             <td>{{app.email}}</td>
             <td>{{app.tel}}</td>

@@ -1,9 +1,9 @@
 <ion-content>
-    <div class="ion-padding">
-        <h2>Groupe X</h2>
-        <h6>thème:</h6>
-        <b>date de début:</b>
-        <h6>date de fin:</h6>
+    <div class="ion-padding" *ngFor="let app of groupes ">
+        <h2>{{app.nom}}</h2>
+        <h6>thème:&nbsp;{{app.travaux.titre}}</h6>
+        <b>date de début:&nbsp;{{app.travaux.debut}}</b>
+        <h6>date de fin:&nbsp;{{app.travaux.fin}}</h6>
 
         <table>
             <tr>
