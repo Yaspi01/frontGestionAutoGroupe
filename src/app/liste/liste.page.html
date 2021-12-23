@@ -7,17 +7,45 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <table>
-        <tr>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Numéro</th>
-        </tr>
-        <tr *ngFor="let app of listes">
-            <td>{{app.nom}}</td>
-            <td>{{app.email}}</td>
-            <td>{{app.tel}}</td>
-        </tr>
-    </table>
+<ion-content><br><br>
+    <ion-row class="row">
+        <ion-col>
+            <button class="ajouterLister" (click)="clickLister()">Lister</button>
+        </ion-col>
+        <ion-col>
+            <button class="ajouterLister" (click)="clickAjouter()">Ajouter</button>
+        </ion-col>
+    </ion-row><br>
+
+    <div *ngIf='mode===1'>
+        <ion-button icon-only>
+            <ion-icon name="add-circle"></ion-icon>
+        </ion-button><br>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Numéro</th>
+            </tr>
+            <tr *ngFor="let app of listes">
+                <td>{{app.nom}}</td>
+                <td>{{app.email}}</td>
+                <td>{{app.tel}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf='mode===2'>
+        <ion-item>
+            <ion-input type="text" matInput placeholder="Nom complet" floating></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="email" matInput placeholder="Email" floating></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="number" matInput placeholder="Telephone" floating></ion-input>
+        </ion-item><br>
+        <button class="ajouterButton" style="background-color: #FF8000; color: #000000" type="submit" routerLink="list-travaux">Confirmer</button>
+    </div>
+
 </ion-content>

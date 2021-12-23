@@ -2,6 +2,7 @@ import { ServiceService } from './../services/service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Color } from '@ionic/core';
 
 
 @Component({

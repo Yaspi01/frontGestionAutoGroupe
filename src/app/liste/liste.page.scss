@@ -1,21 +1,50 @@
-* {
-    width: auto;
-    height: auto;
-}
-
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     color: black;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th,
 td {
-    border: 1px solid #0e0d0d;
+    border: 1px solid black;
     text-align: center;
-    padding: 1px;
     width: auto;
     height: auto;
+}
+
+.theme {
+    border: 1px solid black;
+    width: 265px;
+    height: 30px;
+}
+
+.nbreApprenants {
+    border: 1px solid black;
+    width: 100px;
+    height: 30px
+}
+
+ion-radio {
+    color: #FF8000;
+}
+
+.ajouterLister {
+    position: relative;
+    font-size: 1em;
+}
+
+.ajouterButton {
+    position: relative;
+    margin-top: 5px;
+    font-size: 1.6em;
+    left: 70px;
+    height: 100%;
+    border-radius: 25px;
+}
+
+button:focus {
+    background-color: #FF8000;
 }
 
 tr:nth-child(even) {

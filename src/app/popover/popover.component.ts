@@ -9,9 +9,11 @@ import { ServiceService } from '../services/service.service';
 export class PopoverComponent implements OnInit {
 
   groupes: any;
+  listes: any;
   constructor(private services: ServiceService)
    {
      this.listeGroupes();
+     this.listApp();
    }
 
   ngOnInit() {}
@@ -21,6 +23,12 @@ export class PopoverComponent implements OnInit {
       this.groupes=data;
       console.log(data);
 
+    });
+  }
+  listApp(){
+    this.services.listApprenant().subscribe((result: any)=>{
+      this.listes=result;
+      //console.log(result);
     });
   }
 

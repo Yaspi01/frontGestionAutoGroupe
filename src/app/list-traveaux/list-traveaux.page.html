@@ -7,17 +7,19 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-label>Gestion des traveaux</ion-label>
+<ion-content><br><br>
     <ion-row class="row">
         <ion-col>
-            <button class="ajouterLister" style="background-color: #FF8000;" (click)="clickLister()">Lister</button>
+            <button class="ajouterLister" (click)="clickLister()">Lister</button>
         </ion-col>
         <ion-col>
             <button class="ajouterLister" (click)="clickAjouter()">Ajouter</button>
         </ion-col>
-    </ion-row>
+    </ion-row><br>
     <div *ngIf='mode===1'>
+        <ion-button icon-only>
+            <ion-icon name="add-circle"></ion-icon>
+        </ion-button><br>
         <table>
             <thead>
                 <tr>
@@ -66,7 +68,7 @@
                 <ion-radio value="aleatoir">Aleatoire</ion-radio>
                 <ion-label>Aleatoire</ion-label>
             </ion-radio-group><br><br>
-            <button class="ajouterButton" style="background-color: #FF8000; color: #000000" type="submit">Confirmer</button>
+            <button class="ajouterButton" style="background-color: #FF8000; color: #000000" type="submit" routerLink="list-travaux">Confirmer</button>
         </form>
     </div>
 </ion-content>

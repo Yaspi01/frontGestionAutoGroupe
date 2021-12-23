@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListePage implements OnInit {
           listes: any;
+          mode=1;
   constructor(private router: Router,
     private service: ServiceService) {
       this.listApprenant();
@@ -22,5 +23,12 @@ export class ListePage implements OnInit {
       this.listes=data;
       //console.log(data);
     });
+  }
+  clickLister(){
+    this.mode = 1;
+  }
+
+  clickAjouter(){
+    this.mode = 2;
   }
 }
