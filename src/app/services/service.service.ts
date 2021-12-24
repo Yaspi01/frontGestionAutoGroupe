@@ -6,23 +6,26 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceService {
 
-    // postApprenant: any;
-    // postTravaux: any;
+  url = "http://localhost:8080/api/apprenant/";
   constructor(private http: HttpClient) { }
 
-  listApprenant(){
-   return this.http.get('http://localhost:8080/api/apprenant/liste');
+  addApprenants(data: any){
+    console.log(data)
+    return this.http.post(this.url+"add",data); //, {responseType:"text"}
   }
-  listTravaux(){
-    return this.http.get('http://localhost:8080/api/travaux/liste');
+
+  allApprenants(){
+    return this.http.get(this.url+"liste");
   }
-  listGroupe(){
-    return this.http.get('http://localhost:8080/api/groupe/liste');
+
+  apprenantsById(id: number){
+    return this.http.get(this.url+"find/"+id)
   }
   addApprenant(postApprenant: any){
     return this.http.post('http://localhost:8080/api/apprenant/add', postApprenant, {responseType: 'text'});
   }
   addTravaux(postTravaux: any){
     return this.http.post('http://localhost:8080/api/travaux/add', postTravaux, {responseType: 'text'});
+
   }
 }

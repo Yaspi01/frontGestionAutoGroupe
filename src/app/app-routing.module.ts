@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'list-traveaux',
     loadChildren: () => import('./list-traveaux/list-traveaux.module').then( m => m.ListTraveauxPageModule)
   },
+  {
+    path: 'lister-apprenant',
+    loadChildren: () => import('./lister/lister-routing.module').then( m => m.ListerPageRoutingModule)
+  },
+  {
+    path: 'ajouter-apprenant',
+    loadChildren: () => import('./ajouter/ajouter-routing.module').then( m => m.AjouterPageRoutingModule)
+  },
 
 
 ];

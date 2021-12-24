@@ -1,34 +1,47 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Ajouter</ion-title>
+      <ion-title>Apprenents</ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-
-  
-
 <ion-content>
   <div>
-    <ion-button [routerLink]="['/lister']" color="primary">Lister</ion-button>
-    <ion-button [routerLink]="['/ajouter']" color="secondary">Ajouter</ion-button>  
+    <ion-row>
+      <ion-col>
+        <button color="primary" (click)="clickLister()">Lister</button>
+      </ion-col>
+      <ion-col>
+        <button color="secondary" (click)="clickAjouter()">Ajouter</button>  
+      </ion-col>
+    </ion-row>
   </div>
   
-<!-- Input with value -->
-<ion-label>Nom Complet</ion-label>
-
-<!-- Input with placeholder -->
-<ion-input></ion-input>
-
-<!-- Input with clear button when there is a value -->
-<ion-label>Email</ion-label>
-
-<!-- Number type input -->
-<ion-input></ion-input>
-
-<!-- Input with clear button when there is a value -->
-<ion-label>Numéro de telephone</ion-label>
-
-<!-- Number type input -->
-<ion-input></ion-input>
+<form (ngSubmit)="ajoutApprenants(f.value)", #f="ngForm">
+  <div>
+    <ion-item>
+      <ion-label position="floating" color="dark">Nom</ion-label>
+      <ion-input  name="nom" type="text" ngModel   spellcheck="false" autocapitalize="off"
+        required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" color="dark">Email</ion-label>
+      <ion-input  name="email" type="email" ngModel  spellcheck="false" autocapitalize="off"
+        required>
+      </ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="dark">Telephone</ion-label>
+        <ion-input  name="tel" type="text" ngModel  spellcheck="false" autocapitalize="off"
+          required>
+        </ion-input>
+      </ion-item>
+    <button class="ajouter" type="submit">Ajouter</button>
+  
+  </div>
+</form>
 
 </ion-content>

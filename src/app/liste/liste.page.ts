@@ -23,6 +23,7 @@ export class ListePage implements OnInit {
       email :['', Validators.required] ,
       tel : ['', Validators.required]
     });
+
     }
 
   ngOnInit(): void{
@@ -51,6 +52,15 @@ export class ListePage implements OnInit {
   clickLister(){
     this.mode = 1;
   }
+  // getAllApprenants()
+  // {
+  //   this.http.get('http://localhost:8080/api/kalanso/listeAp').subscribe(
+  //     list=>{
+  //       // console.log(list);
+  //       this.apprenants=list;
+  //     }
+  //   );
+  // }
 
   clickAjouter(){
     this.mode = 2;
