@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ServiceService } from '../services/service.service';
 
 @Component({
   selector: 'app-liste',
@@ -10,21 +11,28 @@ import { HttpClient } from '@angular/common/http';
 export class ListePage implements OnInit {
   apprenants: any;
 
-  constructor(    private router: Router,
+  constructor( private router: Router, private service: ServiceService,
     private http: HttpClient) {
-      this.getAllApprenants();
+      // this.getAllApprenants();
+      this.getAllApprenant()
     }
 
   ngOnInit(): void{
   }
-  getAllApprenants()
-  {
-    this.http.get('http://localhost:8080/api/kalanso/listeAp').subscribe(
-      list=>{
-        // console.log(list);
-        this.apprenants=list;
-      }
-    );
+  getAllApprenant(){
+    this.service.allApprenants().subscribe((data: any)=>{
+      console.log(data);
+      this.apprenants = data
+    })
   }
+  // getAllApprenants()
+  // {
+  //   this.http.get('http://localhost:8080/api/kalanso/listeAp').subscribe(
+  //     list=>{
+  //       // console.log(list);
+  //       this.apprenants=list;
+  //     }
+  //   );
+  // }
 
 }
