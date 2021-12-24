@@ -1,35 +1,16 @@
-<ion-header>
+<ion-header style="background-color: #ff8000;">
     <ion-toolbar>
-        <ion-title>menu</ion-title>
+        <ion-title>Groupes</ion-title>
         <ion-buttons slot="start">
             <ion-menu-button menu="main-menu"></ion-menu-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
-
 <ion-content>
-    <!-- <ion-card>
-        <ion-row>
-            <ion-col size="12">
-                <ion-item>
-                    <ion-label>groupe X</ion-label>
-                </ion-item>
-
-
-                <ion-card-content>
-                    <summary>
-                        <button (click)="presentPopover($event)">text</button>
-                        <details>azertyuiop^$</details>
-                    </summary>
-                </ion-card-content>
-            </ion-col>
-        </ion-row>
-
-    </ion-card> -->
     <div class="card-disposition">
-        <div class="card-content" (click)="presentPopover($event)">
+        <div class="card-content" *ngFor="let app of groupes" id=true (click)="presentPopover($event)">
             <ion-card class="content">
-                <ion-label>Groupe X</ion-label>
+                <ion-label>{{app.nom}}</ion-label>
                 <div class="hr"></div>
                 <summary>
                     <details></details>

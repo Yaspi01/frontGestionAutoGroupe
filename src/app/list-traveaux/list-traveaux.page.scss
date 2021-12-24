@@ -1,41 +1,48 @@
-table{
+table {
     border-collapse: collapse;
     color: black;
     margin-left: auto;
     margin-right: auto;
 }
 
-th, td{
+th,
+td {
     border: 1px solid black;
     text-align: center;
     width: auto;
     height: auto;
 }
 
-.theme{
+.theme {
     border: 1px solid black;
     width: 265px;
     height: 30px;
 }
 
-.nbreApprenants{
+.nbreApprenants {
     border: 1px solid black;
     width: 100px;
     height: 30px
 }
 
-ion-radio{
+ion-radio {
     color: #FF8000;
 }
-.ajouterLister{
+
+.ajouterLister {
     position: relative;
     font-size: 1em;
 }
-.ajouterButton{
+
+.ajouterButton {
     position: relative;
     margin-top: 5px;
     font-size: 1.6em;
     left: 70px;
     height: 100%;
     border-radius: 25px;
+}
+
+button:focus {
+    background-color: #FF8000;
 }

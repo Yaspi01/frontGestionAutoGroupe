@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../services/service.service';
 
 @Component({
   selector: 'app-popover',
@@ -7,8 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopoverComponent implements OnInit {
 
-  constructor() { }
+  groupes: any;
+  listes: any;
+  constructor(private services: ServiceService)
+   {
+     this.listeGroupes();
+     this.listApp();
+   }
 
   ngOnInit() {}
+
+  listeGroupes(){
+    this.services.listGroupe().subscribe((data: any)=>{
+      this.groupes=data;
+      console.log(data);
+
+    });
+  }
+  listApp(){
+    this.services.listApprenant().subscribe((result: any)=>{
+      this.listes=result;
+      //console.log(result);
+    });
+  }
 
 }

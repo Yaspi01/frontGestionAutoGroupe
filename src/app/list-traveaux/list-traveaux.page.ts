@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { ServiceService } from './../services/service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Color } from '@ionic/core';
 
 
 @Component({
@@ -11,10 +13,21 @@ import { Router } from '@angular/router';
 export class ListTraveauxPage implements OnInit {
   mode=1;
   travaux: any;
+  options: FormGroup;
   postBody: any;
+  constructor(public services: ServiceService,
+    private fb: FormBuilder, private router: Router) {
+    this.listTravaux();
 
-  constructor(public http: HttpClient, private router: Router) {
-    this.getTravaux();
+
+    this.options=this.fb.group({
+
+      titre:['', Validators.required],
+      type:['', Validators.required],
+      nombre:['', Validators.required],
+      debut:['', Validators.required],
+      fin:['', Validators.required],
+    });
   }
   clickLister(){
     this.mode = 1;
@@ -24,22 +37,41 @@ export class ListTraveauxPage implements OnInit {
     this.mode = 2;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
   }
-getTravaux(){
-  this.http.get('http://localhost:8080/api/kalanso/listeT').subscribe(
-    result => {
-      // console.log(result);
-      this.travaux= result;
-    });
+
+    ajouTravaux(){
+      this.postBody={
+        titre: '' +this.options.value.titre,
+        type: '' +this.options.value.type,
+        debut: '' +this.options.value.debut,
+        fin: '' +this.options.value.fin,
+        nombre: '' +this.options.value.nombre
+        //description: '' +this.options.value.description
+      };
+
+      this.services.addTravaux(this.postBody).subscribe(data=>{
+        console.log(data);
+
+      });
+    }
+
+    listTravaux(){
+      this.services.listTravaux().subscribe((data: any)=>{
+        this.travaux=data;
+      });
+    };
+
+    //   console.log(this.postBody);
+
+    //   this.services.postTravaux(this.postBody).subscribe((data: any) =>{
+    //     console.log(data);
+    //    // this.addTravaux = data;
+    //     this.router.navigate(['mode=1']);
+    //   });
+    //}
 
 }
-addTravaux(){
-  this.http.post('http://localhost:8080/api/kalanso/addTravaux', this.postBody, {responseType:'text'}).subscribe(
-    data=>{
-      console.log(data);
-      this.router.navigate(['mode==1']);
-    }
-  );
-}
-}
+
+

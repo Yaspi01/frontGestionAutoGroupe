@@ -1,7 +1,7 @@
+import { ServiceService } from './../services/service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ServiceService } from '../services/service.service';
 
 @Component({
   selector: 'app-liste',
@@ -35,4 +35,7 @@ export class ListePage implements OnInit {
   //   );
   // }
 
+  clickAjouter(){
+    this.mode = 2;
+  }
 }
