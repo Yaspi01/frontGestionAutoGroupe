@@ -50,3 +50,10 @@ button:focus {
 tr:nth-child(even) {
     background-color: #FF8000;
 }
+
+input {
+    width: auto;
+    height: auto;
+    border-radius: 10%;
+    margin: auto;
+}

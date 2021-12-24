@@ -18,8 +18,8 @@
     </ion-row><br>
 
     <div *ngIf='mode===1'>
-        <ion-button icon-only>
-            <ion-icon name="add-circle"></ion-icon>
+        <ion-button color="warning">
+            <ion-icon name="download-outline"></ion-icon>
         </ion-button><br>
         <table>
             <tr>
@@ -36,16 +36,19 @@
     </div>
 
     <div *ngIf='mode===2'>
-        <ion-item>
-            <ion-input type="text" matInput placeholder="Nom complet" floating></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-input type="email" matInput placeholder="Email" floating></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-input type="number" matInput placeholder="Telephone" floating></ion-input>
-        </ion-item><br>
-        <button class="ajouterButton" style="background-color: #FF8000; color: #000000" type="submit" routerLink="list-travaux">Confirmer</button>
+        <form autocomplete="off" [formGroup]="apprenant" (ngSubmit)="saveData()">
+            <div>
+                <ion-item>
+                    <input type="text" name="nom" matInput placeholder="Nom complet" formControlName="nom">
+                </ion-item>
+                <ion-item>
+                    <input type="email" name="email" matInput placeholder="Email" formControlName="email">
+                </ion-item>
+                <ion-item>
+                    <input type="number" name="tel" matInput placeholder="Telephone" formControlName="tel">
+                </ion-item><br>
+                <button class="ajouterButton" style="background-color: #FF8000; color: #000000" type="submit">Confirmer</button>
+            </div>
+        </form>
     </div>
-
 </ion-content>

@@ -1,41 +1,50 @@
 <ion-app>
-    <ion-menu menuId="main-menu" content-id="main">
-        <ion-content class="cloro">
-            <ion-header>
-                <ion-toolbar>
-                    <img src="assets/images/logoOdk.png" alt="logoOdk.png">
-                    <ion-title color="light">Kalanso Groupe</ion-title>
-                </ion-toolbar>
-            </ion-header><br>
-            <ion-list>
-                <ion-menu-toggle>
-                    <ion-item routerLink="/ajouter-apprenant">
-                        <ion-icon name="people-outline" slot="start" color="warning"></ion-icon>
-                        <ion-label color="light"> Gestions des Apprenants</ion-label>
-                    </ion-item>
-                </ion-menu-toggle>
-                <ion-menu-toggle>
-                    <ion-item routerLink="/list-traveaux">
-                        <ion-icon name="people-outline" slot="start" color="warning"></ion-icon>
-                        <ion-label color="light"><b>Gestions des Travaux</b></ion-label>
-                    </ion-item>
-                </ion-menu-toggle>
-                <ion-menu-toggle>
-                    <ion-item routerLink="/corbeille">
-                        <ion-icon name="trash" slot="start" color="warning"></ion-icon>
-                        <ion-label color="light"> <b>Corbeille</b></ion-label>
-                    </ion-item>
-                </ion-menu-toggle>
-                <ion-menu-toggle>
-                    <ion-item routerLink="/log">
-                        <ion-icon name="time-outline" slot="start" color="warning"></ion-icon>
-                        <ion-label color="light"> <b>Logs</b></ion-label>
-                    </ion-item>
-                </ion-menu-toggle><br><br><br>
-                <ion-menu-toggle>
-                    <button routerLink="/login">Déconnexion</button>
-                </ion-menu-toggle>
-            </ion-list>
+    <ion-menu menuId="main-menu" content-id="main" class="cloro">
+        <ion-content>
+            <div>
+                <ion-header>
+                    <ion-toolbar>
+                        <img src="assets/images/logoOdk.png">
+                        <div class=" titres"><b color="light">Kalanso Groupe</b></div>
+                    </ion-toolbar>
+                </ion-header><br>
+                <ion-list>
+                    <ion-menu-toggle>
+                        <ion-item routerLink="/menu">
+                            <ion-icon name="home-outline" color="warning" slot="start"></ion-icon>
+                            <ion-label color="light">Accueil</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle>
+                        <ion-item routerLink="/liste">
+                            <ion-icon name="people-outline" slot="start" color="warning"></ion-icon>
+                            <ion-label color="light">Apprenants</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle>
+                        <ion-item routerLink="/list-traveaux">
+                            <ion-icon name="clipboard" slot="start" color="warning"></ion-icon>
+                            <ion-label color="light"><b>Travaux</b></ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle>
+                        <ion-item routerLink="/corbeille">
+                            <ion-icon name="trash" slot="start" color="warning"></ion-icon>
+                            <ion-label color="light"> <b>Corbeille</b></ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle>
+                        <ion-item routerLink="/log">
+                            <ion-icon name="time-outline" slot="start" color="warning"></ion-icon>
+                            <ion-label color="light"> <b>Logs</b></ion-label>
+                        </ion-item>
+                    </ion-menu-toggle><br><br><br>
+                    <ion-menu-toggle>
+                        <button routerLink="/login">Déconnexion</button>
+                    </ion-menu-toggle>
+                </ion-list>
+            </div>
+
         </ion-content>
 
     </ion-menu>

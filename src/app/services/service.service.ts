@@ -21,12 +21,11 @@ export class ServiceService {
   apprenantsById(id: number){
     return this.http.get(this.url+"find/"+id)
   }
-
-  updateApprenants(id: number, data: any){
-    return this.http.put(this.url+"/modify/"+id, data)
+  addApprenant(postApprenant: any){
+    return this.http.post('http://localhost:8080/api/apprenant/add', postApprenant, {responseType: 'text'});
   }
+  addTravaux(postTravaux: any){
+    return this.http.post('http://localhost:8080/api/travaux/add', postTravaux, {responseType: 'text'});
 
-  deleteApprenant(id: number){
-    return this.http.delete(this.url+"/delete/"+id)
   }
 }

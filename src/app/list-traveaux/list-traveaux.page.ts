@@ -2,7 +2,7 @@ import { ServiceService } from './../services/service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { Color } from '@ionic/core';
+
 
 
 @Component({
@@ -13,20 +13,19 @@ import { Color } from '@ionic/core';
 export class ListTraveauxPage implements OnInit {
   mode=1;
   travaux: any;
-  options: FormGroup;
+  baara: FormGroup;
   postBody: any;
   constructor(public services: ServiceService,
     private fb: FormBuilder, private router: Router) {
+
     this.listTravaux();
-
-
-    this.options=this.fb.group({
+    this.baara=this.fb.group({
 
       titre:['', Validators.required],
       type:['', Validators.required],
       nombre:['', Validators.required],
       debut:['', Validators.required],
-      fin:['', Validators.required],
+      fin:['', Validators.required]
     });
   }
   clickLister(){
@@ -43,16 +42,16 @@ export class ListTraveauxPage implements OnInit {
 
     ajouTravaux(){
       this.postBody={
-        titre: '' +this.options.value.titre,
-        type: '' +this.options.value.type,
-        debut: '' +this.options.value.debut,
-        fin: '' +this.options.value.fin,
-        nombre: '' +this.options.value.nombre
-        //description: '' +this.options.value.description
+        titre:this.baara.value.titre,
+        type: this.baara.value.type,
+        debut: this.baara.value.debut,
+        fin: this.baara.value.fin,
+        nombre:this.baara.value.nombre
       };
+     // console.log(this.postBody);
 
-      this.services.addTravaux(this.postBody).subscribe(data=>{
-        console.log(data);
+      this.services.addTravaux(this.postBody).subscribe(res=>{
+        console.log(res);
 
       });
     }
@@ -62,15 +61,6 @@ export class ListTraveauxPage implements OnInit {
         this.travaux=data;
       });
     };
-
-    //   console.log(this.postBody);
-
-    //   this.services.postTravaux(this.postBody).subscribe((data: any) =>{
-    //     console.log(data);
-    //    // this.addTravaux = data;
-    //     this.router.navigate(['mode=1']);
-    //   });
-    //}
 
 }
 
