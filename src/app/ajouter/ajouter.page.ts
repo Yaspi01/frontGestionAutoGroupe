@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from '../services/service.service';
 
@@ -9,7 +8,6 @@ import { ServiceService } from '../services/service.service';
   styleUrls: ['./ajouter.page.scss'],
 })
 export class AjouterPage implements OnInit {
-  donnee: {nom:'', email:'', tel:''};
 
   mode=1;
   
@@ -33,16 +31,17 @@ export class AjouterPage implements OnInit {
     this.mode = 2;
   }
 
-  async ajoutApprenants(form: NgForm){
-    // let data = {
-    //   nom : this.nom,
-    //   email : this.email,
-    //   tel : this.tel,
-    // }
-    console.log(form.value);
+  ajoutApprenants(f:any){
+    console.log(f);
     
-    this.service.addApprenants(form.value).subscribe((result)=>{
-      this.apprenants = result
+    let data = {
+      nom : this.nom,
+      email : this.email,
+      tel : this.tel,
+    }
+    console.log(data);
+    
+    this.service.addApprenants(data).subscribe((result)=>{
       console.log(result);
       this.router.navigateByUrl("liste")
      

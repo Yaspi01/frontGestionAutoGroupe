@@ -19,28 +19,29 @@
     </ion-row>
   </div>
   
-<div>
-  <form  (ngSubmit)="ajoutApprenants(form)" #form="ngForm">
+<form (ngSubmit)="ajoutApprenants(f.value)", #f="ngForm">
+  <div>
     <ion-item>
-      <ion-label position="floating" color="dark">Nom Complet</ion-label>
-      <ion-input  type="text" ngModel name="nom" #nom="ngModel" spellcheck="false" autocapitalize="off"
+      <ion-label position="floating" color="dark">Nom</ion-label>
+      <ion-input  name="nom" type="text" ngModel   spellcheck="false" autocapitalize="off"
         required>
       </ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" color="dark">Email</ion-label>
-      <ion-input  type="email" ngModel name="email" #email="ngModel" spellcheck="false" autocapitalize="off"
+      <ion-input  name="email" type="email" ngModel  spellcheck="false" autocapitalize="off"
         required>
       </ion-input>
     </ion-item>
       <ion-item>
         <ion-label position="floating" color="dark">Telephone</ion-label>
-        <ion-input type="text" ngMode  name="tel" #tel="ngModel" spellcheck="false" autocapitalize="off" required>
+        <ion-input  name="tel" type="text" ngModel  spellcheck="false" autocapitalize="off"
+          required>
         </ion-input>
       </ion-item>
-    <ion-button class="ajouter" type="submit" >Ajouter</ion-button>
-  </form>
-
-</div>
+    <button class="ajouter" type="submit">Ajouter</button>
+  
+  </div>
+</form>
 
 </ion-content>
