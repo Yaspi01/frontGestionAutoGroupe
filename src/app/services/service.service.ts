@@ -20,9 +20,9 @@ export class ServiceService {
     return this.http.get('http://localhost:8080/api/groupe/liste');
   }
   addApprenant(postApprenant: any){
-    return this.http.post('http://localhost:8080/api/apprenant/add', postApprenant);
+    return this.http.post('http://localhost:8080/api/apprenant/add', postApprenant, {responseType: 'text'});
   }
   addTravaux(postTravaux: any){
-    return this.http.post('http://localhost:8080/api/travaux/add', postTravaux);
+    return this.http.post('http://localhost:8080/api/travaux/add', postTravaux, {responseType: 'text'});
   }
 }

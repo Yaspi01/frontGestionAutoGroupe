@@ -17,8 +17,8 @@
         </ion-col>
     </ion-row><br>
     <div *ngIf='mode===1'>
-        <ion-button icon-only>
-            <ion-icon name="add-circle"></ion-icon>
+        <ion-button color="warning">
+            <ion-icon name="download-outline"></ion-icon>
         </ion-button><br>
         <table>
             <thead>
@@ -44,31 +44,29 @@
     </div>
 
     <div *ngIf='mode===2'>
-        <form [formGroup]="options" (ngSubmit)="ajouTravaux">
+        <form [formGroup]="baara" (ngSubmit)="ajouTravaux()">
             <ion-label>Thème</ion-label>
-            <ion-input matInput type="text" class="theme" formControlName="titre"></ion-input>
+            <input matInput type="text" class="theme" formControlName="titre"><br>
 
             <ion-radio-group formControlName="type">
                 <ion-radio value="VEILLE"></ion-radio>
                 <ion-label>Veille</ion-label>
                 <ion-radio value="TP"></ion-radio>
                 <ion-label>TP</ion-label>
-            </ion-radio-group><br>
-            <ion-label>Descriptions</ion-label>
-            <ion-input matInput type="text" class="theme" formControlName="description"></ion-input>
+            </ion-radio-group><br><br>
             <ion-label>Nombre de personne par groupe</ion-label>
-            <ion-input class="nbreApprenants" formControlName="nombre"></ion-input><br>
+            <input class="nbreApprenants" formControlName="nombre" name="nombre"><br>
             <label>Début</label>
-            <ion-input matInput type="date" formControlName="debut"></ion-input>
+            <input matInput type="date" formControlName="debut" name="debut">
             <label>Fin</label>
-            <ion-input matInput type="date" formControlName="fin"></ion-input>
-            <ion-radio-group>
+            <input matInput type="date" formControlName="fin" name="fin">
+            <!-- <ion-radio-group>
                 <ion-radio value="ordre"></ion-radio>
                 <ion-label>Ordre</ion-label>
                 <ion-radio value="aleatoir">Aleatoire</ion-radio>
                 <ion-label>Aleatoire</ion-label>
-            </ion-radio-group><br><br>
-            <button class="ajouterButton" style="background-color: #FF8000; color: #000000" type="submit" routerLink="list-travaux">Confirmer</button>
+            </ion-radio-group><br><br> -->
+            <button class="ajouterButton" style="background-color: #FF8000; color: #000000" type="submit">Confirmer</button>
         </form>
     </div>
 </ion-content>
